@@ -358,7 +358,7 @@
           <h3>Join Discord</h3>
           <p>Connect with the community for support and discussions.</p>
           <a
-            href="https://discord.com/channels/1137181739773603922/1158792618856169592"
+            href="https://discord.gg/orcaslicer"
             target="_blank"
             class="contact-btn"
             >Join Discord</a
@@ -459,41 +459,51 @@
 
       // Function to fetch latest release data and update download links and version numbers
       async function fetchDownloadLinks() {
-        const apiUrl =
-          "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest";
-        try {
-          const response = await fetch(apiUrl);
-          const data = await response.json();
-          // Get the release version from the API response (e.g. tag_name)
-          const releaseVersion = data.tag_name || data.name || "";
-          // Update all .version elements inside each platform card
-          document
-            .querySelectorAll(".platform-card .version")
-            .forEach((elem) => {
-              elem.textContent = `Version ${releaseVersion}`;
-            });
-          // Group assets by OS
-          groupAssetsByOS(data.assets);
-          // For each platform, list all downloadable assets
-          for (const platform in downloadLinks) {
-            const ul = document.querySelector(`#${platform}Downloads ul`);
-            downloadLinks[platform].forEach((asset) => {
-              const li = document.createElement("li");
-              li.style.margin = "0.5rem 0";
-              const a = document.createElement("a");
-              a.href = asset.browser_download_url;
-              a.textContent = asset.name;
-              a.target = "_blank";
-              li.appendChild(a);
-              ul.appendChild(li);
-            });
-          }
-        } catch (error) {
-          console.error("Error fetching release data:", error);
-          document.getElementById("download").innerHTML +=
-            "<p>Error loading download links.</p>";
-        }
-      }
+  try {
+    // Fetch latest release
+    const latestResponse = await fetch(
+      "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest"
+    );
+    const latestData = await latestResponse.json();
+
+    // Fetch nightly builds
+    const nightlyResponse = await fetch(
+      "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/tags/nightly-builds"
+    );
+    const nightlyData = await nightlyResponse.json();
+
+    // Get the release version from the API response
+    const releaseVersion = latestData.tag_name || latestData.name || "";
+    
+    // Update version elements
+    document.querySelectorAll(".platform-card .version").forEach((elem) => {
+      elem.textContent = `Version ${releaseVersion}`;
+    });
+
+    // Group assets by OS for both releases
+    groupAssetsByOS(latestData.assets);
+    groupAssetsByOS(nightlyData.assets);
+
+    // For each platform, list all downloadable assets
+    for (const platform in downloadLinks) {
+      const ul = document.querySelector(`#${platform}Downloads ul`);
+      downloadLinks[platform].forEach((asset) => {
+        const li = document.createElement("li");
+        li.style.margin = "0.5rem 0";
+        const a = document.createElement("a");
+        a.href = asset.browser_download_url;
+        a.textContent = asset.name;
+        a.target = "_blank";
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+    }
+  } catch (error) {
+    console.error("Error fetching release data:", error);
+    document.getElementById("download").innerHTML +=
+      "<p>Error loading download links.</p>";
+  }
+}
 
       // Automatically load download links on page load
       window.addEventListener("DOMContentLoaded", fetchDownloadLinks);

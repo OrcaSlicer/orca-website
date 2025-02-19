@@ -301,6 +301,74 @@
     <section class="download-section" id="download">
       <img src="/images/abstract_top.svg" class="download_abstract" />
       <div class="download_header">
+        <h2>Download OrcaSlicer</h2>
+        <div class="version-info">
+          <p>Latest Release: <span class="version-number">v0.0.0</span></p>
+          <a
+            href="https://github.com/SoftFever/OrcaSlicer/releases"
+            target="_blank"
+            class="changelog-link"
+            >read changelog</a
+          >
+        </div>
+        <div class="platform-cards">
+          <div class="platform-card" id="windowsDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-windows fa-3x"></i>
+              <h3>Windows</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Installer</a>
+              <a href="#" class="download-option">Portable</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">Nightly ▼</button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="platform-card" id="macosDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-apple fa-3x"></i>
+              <h3>MacOS</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Arm64</a>
+              <a href="#" class="download-option">x86_64</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">Nightly ▼</button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="platform-card" id="linuxDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-linux fa-3x"></i>
+              <h3>Linux</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Ubuntu24 AppImage</a>
+              <a href="#" class="download-option">AppImage</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">Nightly ▼</button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="download-section" id="download">
+      <img src="/images/abstract_top.svg" class="download_abstract" />
+      <div class="download_header">
         <p>Download OrcaSlicer</p>
         <div class="platform-cards">
           <div class="platform-card" id="windowsDownloads">
@@ -323,7 +391,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="contact" id="contact">
       <img src="/images/abstract_top.svg" class="contact_abstract" />
       <div class="contact_header">
@@ -438,75 +506,193 @@
       });
 
       const downloadLinks = {
-        windows: [],
-        macos: [],
-        linux: [],
+        windows: {
+          stable: { installer: null, portable: null },
+          nightly: [],
+        },
+        macos: {
+          stable: { arm64: null, x86_64: null },
+          nightly: [],
+        },
+        linux: {
+          stable: { ubuntu24: null, appimage: null },
+          nightly: [],
+        },
       };
 
-      // Function to group assets by platform based on file extension or keywords
-      function groupAssetsByOS(assets) {
+      // Function to group assets by platform and type
+      function groupAssetsByOS(assets, isNightly = false) {
         assets.forEach((asset) => {
           const name = asset.name.toLowerCase();
+
           if (name.endsWith(".exe") || name.includes("win")) {
-            downloadLinks.windows.push(asset);
+            if (isNightly) {
+              downloadLinks.windows.nightly.push(asset);
+            } else {
+              if (name.includes("portable")) {
+                downloadLinks.windows.stable.portable = asset;
+              } else {
+                downloadLinks.windows.stable.installer = asset;
+              }
+            }
           } else if (name.endsWith(".dmg") || name.includes("mac")) {
-            downloadLinks.macos.push(asset);
+            if (isNightly) {
+              downloadLinks.macos.nightly.push(asset);
+            } else {
+              if (name.includes("arm64")) {
+                downloadLinks.macos.stable.arm64 = asset;
+              } else {
+                downloadLinks.macos.stable.x86_64 = asset;
+              }
+            }
           } else if (name.endsWith(".appimage") || name.includes("linux")) {
-            downloadLinks.linux.push(asset);
+            if (isNightly) {
+              downloadLinks.linux.nightly.push(asset);
+            } else {
+              if (name.includes("ubuntu24")) {
+                downloadLinks.linux.stable.ubuntu24 = asset;
+              } else {
+                downloadLinks.linux.stable.appimage = asset;
+              }
+            }
           }
         });
       }
 
-      // Function to fetch latest release data and update download links and version numbers
       async function fetchDownloadLinks() {
-  try {
-    // Fetch latest release
-    const latestResponse = await fetch(
-      "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest"
-    );
-    const latestData = await latestResponse.json();
+        try {
+          // Fetch latest release
+          const latestResponse = await fetch(
+            "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest"
+          );
+          const latestData = await latestResponse.json();
 
-    // Fetch nightly builds
-    const nightlyResponse = await fetch(
-      "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/tags/nightly-builds"
-    );
-    const nightlyData = await nightlyResponse.json();
+          // Fetch nightly builds
+          const nightlyResponse = await fetch(
+            "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/tags/nightly-builds"
+          );
+          const nightlyData = await nightlyResponse.json();
 
-    // Get the release version from the API response
-    const releaseVersion = latestData.tag_name || latestData.name || "";
-    
-    // Update version elements
-    document.querySelectorAll(".platform-card .version").forEach((elem) => {
-      elem.textContent = `Version ${releaseVersion}`;
-    });
+          // Get the release version and date
+          const releaseVersion = latestData.tag_name || latestData.name || "";
+          const releaseDate = new Date(
+            latestData.published_at
+          ).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
 
-    // Group assets by OS for both releases
-    groupAssetsByOS(latestData.assets);
-    groupAssetsByOS(nightlyData.assets);
+          // Update version info
+          document.querySelector(".version-number").textContent =
+            releaseVersion;
 
-    // For each platform, list all downloadable assets
-    for (const platform in downloadLinks) {
-      const ul = document.querySelector(`#${platform}Downloads ul`);
-      downloadLinks[platform].forEach((asset) => {
-        const li = document.createElement("li");
-        li.style.margin = "0.5rem 0";
-        const a = document.createElement("a");
-        a.href = asset.browser_download_url;
-        a.textContent = asset.name;
-        a.target = "_blank";
-        li.appendChild(a);
-        ul.appendChild(li);
+          // Group assets
+          groupAssetsByOS(latestData.assets, false);
+          groupAssetsByOS(nightlyData.assets, true);
+
+          // Update stable download links
+          updateStableDownloadLinks();
+
+          // Update nightly build dropdowns
+          updateNightlyDropdowns();
+        } catch (error) {
+          console.error("Error fetching release data:", error);
+          document.getElementById("download").innerHTML +=
+            "<p>Error loading download links.</p>";
+        }
+      }
+
+      function updateStableDownloadLinks() {
+        // Windows
+        if (downloadLinks.windows.stable.installer) {
+          document.querySelector(
+            "#windowsDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.windows.stable.installer.browser_download_url;
+        }
+        if (downloadLinks.windows.stable.portable) {
+          document.querySelector(
+            "#windowsDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.windows.stable.portable.browser_download_url;
+        }
+
+        // MacOS
+        if (downloadLinks.macos.stable.arm64) {
+          document.querySelector(
+            "#macosDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.macos.stable.arm64.browser_download_url;
+        }
+        if (downloadLinks.macos.stable.x86_64) {
+          document.querySelector(
+            "#macosDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.macos.stable.x86_64.browser_download_url;
+        }
+
+        // Linux
+        if (downloadLinks.linux.stable.ubuntu24) {
+          document.querySelector(
+            "#linuxDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.linux.stable.ubuntu24.browser_download_url;
+        }
+        if (downloadLinks.linux.stable.appimage) {
+          document.querySelector(
+            "#linuxDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.linux.stable.appimage.browser_download_url;
+        }
+      }
+
+      function updateNightlyDropdowns() {
+        const platforms = ["windows", "macos", "linux"];
+
+        platforms.forEach((platform) => {
+          const nightlyContent = document.querySelector(
+            `#${platform}Downloads .nightly-content`
+          );
+          nightlyContent.innerHTML = ""; // Clear existing content
+
+          downloadLinks[platform].nightly.forEach((asset) => {
+            const link = document.createElement("a");
+            link.href = asset.browser_download_url;
+            link.textContent = asset.name;
+            link.className = "nightly-link";
+            link.target = "_blank";
+            nightlyContent.appendChild(link);
+          });
+        });
+      }
+
+      // Handle nightly dropdown toggles
+      document.addEventListener("DOMContentLoaded", function () {
+        const nightlyToggles = document.querySelectorAll(".nightly-toggle");
+
+        nightlyToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const content = this.nextElementSibling;
+            // Close all other dropdowns
+            document
+              .querySelectorAll(".nightly-content")
+              .forEach((dropdown) => {
+                if (dropdown !== content) {
+                  dropdown.classList.remove("active");
+                }
+              });
+            content.classList.toggle("active");
+          });
+        });
+
+        // Close nightly dropdowns when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest(".nightly-dropdown")) {
+            document.querySelectorAll(".nightly-content").forEach((content) => {
+              content.classList.remove("active");
+            });
+          }
+        });
+
+        // Initialize download links
+        fetchDownloadLinks();
       });
-    }
-  } catch (error) {
-    console.error("Error fetching release data:", error);
-    document.getElementById("download").innerHTML +=
-      "<p>Error loading download links.</p>";
-  }
-}
-
-      // Automatically load download links on page load
-      window.addEventListener("DOMContentLoaded", fetchDownloadLinks);
 
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

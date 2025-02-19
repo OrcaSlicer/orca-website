@@ -1,0 +1,269 @@
+:root {
+  --primary-color: rgba(0, 103, 91, 1);
+  --dark-bg: #1a1a1a;
+  --light-text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.hero_container {
+  background-image: url("/images/heresection.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 610px;
+  overflow-y: hidden;
+}
+.abstract_top {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Navbar Contents */
+
+.navbar_container {
+  padding-top: 20px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.navbar {
+  position: fixed;
+  backdrop-filter: blur(1px); /* Glass effect */
+  -webkit-backdrop-filter: blur(1px); /* Safari support */
+  border-radius: 100px;
+  z-index: 50;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 15px 30px;
+  width: 100%;
+  position: relative;
+}
+.navbar_content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar_brand a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+}
+.navbar_links {
+  display: flex;
+  gap: 20px;
+}
+.navbar_links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar_links a:hover {
+  text-decoration: underline;
+  color: #fff;
+  /* textu: #00675b; */
+}
+
+.menu-btn {
+  display: none;
+}
+
+.navbar_container .download-btn {
+  background-color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  color: var(--primary-color);
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d;
+  z-index: 100;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu .nav-link {
+  font-size: 1.2rem;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+}
+
+.mobile-menu .nav-link:hover {
+  text-decoration: underline;
+  color: green;
+}
+
+.mobile-menu .download-btn {
+  margin-top: 16px;
+  background-color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  color: var(--primary-color);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* HERO SECTION OF TEXTS*/
+.hero_texts {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 80px;
+  padding-left: 80px;
+  padding-bottom: 60px;
+  padding-right: 80px;
+}
+.hero_texts h2 {
+  font-size: 52px;
+  z-index: 10;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero_texts p {
+  font-size: 20px;
+  z-index: 10;
+  width: 650px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero_texts .download-btn {
+  margin-bottom: 0px;
+  background-color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  color: var(--primary-color);
+}
+
+.cross {
+  position: absolute;
+  left: 100px;
+}
+.ball {
+  position: absolute;
+  right: 90px;
+  bottom: 100px;
+}
+.c {
+  position: absolute;
+  right: 100px;
+}
+/* MEDIA QUERY */
+
+@media (max-width: 1024px) {
+  .hero_container {
+    height: fit-content;
+     overflow-y: none;
+  }
+  /* Hide on screens smaller than 768px */
+  .abstract_top {
+    display: none;
+  }
+
+  /* NAVBAR CONTENTS */
+  .menu-btn {
+    display: flex;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  .navbar_container {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navbar_links {
+    display: none;
+  }
+
+  .navbar_container .download-btn {
+    display: none;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+
+  /* HERO SECTION OF TEXTS*/
+  .hero_texts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .hero_texts h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .hero_texts p {
+    font-size: 16px;
+    z-index: 10;
+    width: 100%;
+  }
+  .ball {
+    bottom: 20px;
+    right: 10px;
+  }
+  /* .cross {
+    display: none;
+  } */
+
+  /* .c , .cross{
+    display: none;
+  } */
+}

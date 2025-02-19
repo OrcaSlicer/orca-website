@@ -242,27 +242,24 @@ body {
   padding-right: 80px;
 }
 .feature_header p {
-  z-index: 10;
-  background: linear-gradient(50deg, #00675b 0%, #64ffed 100%);
-  background-clip: text;
-  margin-bottom: 10px;
-  -webkit-background-clip: text;
-  color: transparent;
-  width: fit-content;
+  text-align: center;
   font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 30px;
   padding: 13px 24px;
-  border-radius: 100px;
-  border: 1px solid #64ffed;
+  z-index: 10;
 }
 .feature_header h5 {
   z-index: 10;
   background: linear-gradient(50deg, rgba(255, 255, 255, 1) 30%, #64ffed 70%);
   font-size: 48px;
   font-weight: 400;
+  text-align: center;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  width: fit-content;
+  /* width: fit-content; */
 }
 .feature_cards {
   display: grid;
@@ -344,20 +341,29 @@ body {
   padding-right: 80px;
 }
 .download_header p {
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 13px 24px;
   z-index: 10;
-  background: linear-gradient(50deg, #00675b 0%, #64ffed 100%);
+  /* background: linear-gradient(50deg, #00675b 0%, #64ffed 100%);
   background-clip: text;
   margin-bottom: 10px;
   -webkit-background-clip: text;
   color: transparent;
   width: fit-content;
-  font-weight: 800;
-  margin-bottom: 30px;
-  padding: 13px 24px;
   border-radius: 100px;
-  border: 1px solid #64ffed;
+  border: 1px solid #64ffed; */
 }
 
+.platform-card .version {
+  background: linear-gradient(50deg, #00675b 0%, #64ffed 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
 .platform-cards {
   display: grid;
   gap: 1rem;
@@ -452,6 +458,7 @@ body {
 
 .contact_header p {
   color: #fff;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 1rem;
 }

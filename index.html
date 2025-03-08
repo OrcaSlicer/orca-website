@@ -1,339 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OrcaSlicer - Powerful 3D Printing Slicer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #00675B;
-      --dark-bg: #1a1a1a;
-      --light-text: #ffffff;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background-color: #f5f5f5;
-    }
-    .navbar {
-      background-color: var(--dark-bg);
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .navbar ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-    }
-    .navbar a {
-      color: var(--light-text);
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s;
-    }
-    .navbar a:hover {
-      color: var(--primary-color);
-    }
-    .hero {
-      background: linear-gradient(135deg, var(--primary-color), #363636);
-      color: var(--light-text);
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-    }
-    .download-btn {
-      background-color: var(--light-text);
-      color: var(--primary-color);
-      padding: 1rem 2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin: 1rem;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .download-btn:hover {
-      transform: translateY(-3px);
-    }
-    .features {
-      padding: 4rem 2rem;
-      background-color: var(--light-text);
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .feature-card {
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .feature-card i {
-      font-size: 2.5rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-    }
-    .download-section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .platform-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 2rem auto;
-    }
-    .platform-card {
-      background: var(--light-text);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    }
-    .platform-card h3 {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-    }
-    .platform-card p {
-      margin: 0.5rem 0 1rem;
-      font-weight: bold;
-    }
-    .platform-card ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
-    .platform-card li {
-      margin: 0.5rem 0;
-    }
-    .platform-card a {
-      color: var(--primary-color);
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .platform-card a:hover {
-      color: var(--primary-color);
-      text-decoration: underline;
-    }
-    footer {
-      background-color: var(--dark-bg);
-      color: var(--light-text);
-      padding: 2rem;
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      .navbar ul {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <ul>
-      <li>
-        <a href="#home">
-          <img src="images/OrcaSlicer_gradient_circle.svg" alt="OrcaSlicer logo" style="height:30px; vertical-align:middle; margin-right:0.5rem;">
-          OrcaSlicer
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrcaSlicer - Powerful 3D Printing Slicer</title>
+
+    <!-- Meta Descriptions (Critical for SEO) -->
+    <meta
+      name="description"
+      content="Next-gen slicing software for precision 3D prints"
+    />
+
+    <!-- Keywords (Optional but can help slightly for specific niche SEO) -->
+    <meta
+      name="keywords"
+      content="orcaslicer, 3D printing slicer, High-accuracy slicing, Best 3D printing slicer, Open-source slicer, Precision 3D printing, Next-gen slicing software"
+    />
+
+    <!-- Author -->
+    <meta name="OrcaSlicer" content="OrcaSlicer" />
+
+    <!-- Open Graph Meta Tags (For Social Sharing) -->
+    <meta
+      property="og:title"
+      content="OrcaSlicer|Powerful 3D Printing Slicer"
+    />
+    <meta
+      property="og:description"
+      content="Next-gen slicing software for precision 3D prints"
+    />
+    <meta property="og:image" content="images/OrcaSlicer_gradient_circle.svg" />
+    <meta property="og:url" content="https://www.orcaslicer.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="OrcaSlicer|Powerful 3D Printing Slicer"
+    />
+    <meta
+      name="twitter:description"
+      content="Next-gen slicing software for precision 3D prints"
+    />
+    <meta
+      name="twitter:image"
+      content="images/OrcaSlicer_gradient_circle.svg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.orcaslicer.com/" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="hero_container">
+      <!-- Destop Menu -->
+      <div class="navbar_container">
+        <nav class="navbar">
+          <div class="navbar_content">
+            <div class="navbar_brand">
+              <a href="/">
+                <img
+                  src="images/OrcaSlicer_gradient_circle.svg"
+                  alt="OrcaSlicer logo"
+                  style="
+                    height: 30px;
+                    vertical-align: middle;
+                    margin-right: 0.5rem;
+                  "
+                />
+                <span> Orca Slicer </span>
+              </a>
+            </div>
+
+            <div class="navbar_links">
+              <a href="#features">Features</a>
+              <a
+                href="https://github.com/SoftFever/OrcaSlicer/wiki"
+                target="_blank"
+                >Documentation</a
+              >
+              <a href="https://discord.gg/orcaslicer" target="_blank"
+                >Community</a
+              >
+              <a href="#contact"> Contact </a>
+            </div>
+
+            <!-- Download Button (Desktop) -->
+            <a href="#download">
+              <button class="download-btn">Download Now</button>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-btn" aria-label="Open menu">
+              <svg
+                width="16"
+                height="11"
+                viewBox="0 0 16 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.33334 10.5C1.09723 10.5 0.899447 10.42 0.740003 10.26C0.580559 10.1 0.500558 9.90222 0.500003 9.66667C0.499447 9.43111 0.579447 9.23333 0.740003 9.07333C0.900559 8.91333 1.09834 8.83333 1.33334 8.83333H14.6667C14.9028 8.83333 15.1008 8.91333 15.2608 9.07333C15.4208 9.23333 15.5006 9.43111 15.5 9.66667C15.4994 9.90222 15.4194 10.1003 15.26 10.2608C15.1006 10.4214 14.9028 10.5011 14.6667 10.5H1.33334ZM1.33334 6.33333C1.09723 6.33333 0.899447 6.25333 0.740003 6.09333C0.580559 5.93333 0.500558 5.73556 0.500003 5.5C0.499447 5.26444 0.579447 5.06667 0.740003 4.90667C0.900559 4.74667 1.09834 4.66667 1.33334 4.66667H14.6667C14.9028 4.66667 15.1008 4.74667 15.2608 4.90667C15.4208 5.06667 15.5006 5.26444 15.5 5.5C15.4994 5.73556 15.4194 5.93361 15.26 6.09417C15.1006 6.25472 14.9028 6.33444 14.6667 6.33333H1.33334ZM1.33334 2.16667C1.09723 2.16667 0.899447 2.08667 0.740003 1.92667C0.580559 1.76667 0.500558 1.56889 0.500003 1.33333C0.499447 1.09778 0.579447 0.9 0.740003 0.74C0.900559 0.58 1.09834 0.5 1.33334 0.5H14.6667C14.9028 0.5 15.1008 0.58 15.2608 0.74C15.4208 0.9 15.5006 1.09778 15.5 1.33333C15.4994 1.56889 15.4194 1.76694 15.26 1.9275C15.1006 2.08806 14.9028 2.16778 14.6667 2.16667H1.33334Z"
+                  fill="#00675b"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <button class="close-btn" aria-label="Close menu">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <a href="#features" class="nav-link">Features</a>
+        <a
+          href="https://github.com/SoftFever/OrcaSlicer/wiki"
+          target="_blank"
+          class="nav-link"
+          >Documentation</a
+        >
+        <a href="https://discord.gg/orcaslicer" target="_blank" class="nav-link"
+          >Community</a
+        >
+        <a href="#contact" class="nav-link"> Contact </a>
+        <a href="#download">
+          <button class="download-btn">Download Now</button>
         </a>
-      </li>
-      <div>
-        <a href="#features">Features</a>
-        <a href="#download">Download</a>
-        <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank">Documentation</a>
-        <a href="https://discord.gg/orcaslicer" target="_blank">Community</a>
       </div>
-    </ul>
-  </nav>
 
-  <section class="hero" id="home">
-    <!-- Modified logo size -->
-    <img src="images/OrcaSlicer_gradient_circle.svg" alt="OrcaSlicer logo" style="height:180px; margin-bottom:1rem;">
-    <h1>Orca Slicer</h1>
-    <p>Next-gen slicing software for precision 3D prints</p>
-    <a href="#download" class="download-btn">Download Now</a>
-  </section>
-
-  <section class="features" id="features">
-  <div class="features-grid">
-    <div class="feature-card">
-      <i class="fas fa-sliders-h"></i>
-      <h3>Advanced Calibration Tools</h3>
-      <p>Comprehensive suite: temperature towers, flow rate, retraction &amp; more for optimal performance.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-border-all"></i>
-      <h3>Precise Wall and Seam Control</h3>
-      <p>Adjust outer wall spacing and apply scarf seams to enhance print accuracy.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-layer-group"></i>
-      <h3>Sandwich Mode and Polyholes Support</h3>
-      <p>Use varied infill patterns and accurate hole shapes for improved clarity.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-life-ring"></i>
-      <h3>Overhang and Support Optimization</h3>
-      <p>Modify geometry for printable overhangs with precise support placement.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-tachometer-alt"></i>
-      <h3>Granular Controls and Customization</h3>
-      <p>Fine-tune print speed, layer height, pressure, and temperature with precision.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-network-wired"></i>
-      <h3>Network Printer Support</h3>
-      <p>Seamless integration with Klipper, PrusaLink, and OctoPrint for remote control.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-mouse-pointer"></i>
-      <h3>Mouse Ear Brims &amp; Adaptive Bed Mesh</h3>
-      <p>Automatic brims and adaptive mesh calibration ensure consistent adhesion.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-desktop"></i>
-      <h3>User-Friendly Interface</h3>
-      <p>Intuitive drag-and-drop design with pre-made profiles for popular printers.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-users"></i>
-      <h3>Open-Source &amp; Community Driven</h3>
-      <p>Regular updates fueled by continuous community contributions.</p>
-    </div>
-    <div class="feature-card">
-      <i class="fas fa-print"></i>
-      <h3>Wide Printer Compatibility</h3>
-      <p>Supports a broad range of printers: Bambu Lab, Prusa, Creality, Voron, and more.</p>
-    </div>
-  </div>
-</section>
-
-  <section class="download-section" id="download">
-    <h2>Download OrcaSlicer</h2>
-    <div class="platform-cards">
-      <div class="platform-card" id="windowsDownloads">
-        <i class="fab fa-windows fa-3x"></i>
-        <h3>Windows</h3>
-        <p class="version">Version </p>
-        <ul></ul>
+      <!-- Hero Text Section -->
+      <div class="hero_texts">
+        <h2>Next-Gen Slicing Software for Precision 3D Prints</h2>
+        <p>
+          Optimize your prints with ultra-fast slicing, intelligent support
+          generation, and seamless printer compatibility—engineered for
+          perfection.
+        </p>
+        <a href="#download" class="download-btn"> Download Now </a>
       </div>
-      <div class="platform-card" id="macosDownloads">
-        <i class="fab fa-apple fa-3x"></i>
-        <h3>macOS</h3>
-        <p class="version">Version </p>
-        <ul></ul>
-      </div>
-      <div class="platform-card" id="linuxDownloads">
-        <i class="fab fa-linux fa-3x"></i>
-        <h3>Linux</h3>
-        <p class="version">Version </p>
-        <ul></ul>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2025 OrcaSlicer</p>
-    <div style="margin-top: 1rem;">
-      <a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" style="color: white; margin: 0 1rem;">
-        <i class="fab fa-github fa-2x"></i>
+      <img src="/images/3dimages/cross.svg" class="cross" />
+      <img src="/images/3dimages/c.svg" class="c" />
+      <img src="/images/3dimages/ball.svg" class="ball" />
+    </div>
+    <section class="features" id="features">
+      <img src="/images/abstract_top.svg" class="feature_abstract" />
+      <div class="feature_header">
+        <p>Our Features</p>
+        <h5>Precision & Control for Exceptional 3D Printing</h5>
+      </div>
+      <div class="feature_cards">
+        <div class="feature_card">
+          <img src="/images/icons/1.svg" class="icon" />
+          <h3>Advanced Calibration Tools</h3>
+          <p>
+            Comprehensive suite: temperature towers, flow rate, retraction &
+            more for optimal performance.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/2.svg" class="icon" />
+          <h3>Precise Wall and Seam Control</h3>
+          <p>
+            Adjust outer wall spacing and apply scarf seams to enhance print
+            accuracy.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/3.svg" class="icon" />
+          <h3>Sandwich Mode and Polyholes Support</h3>
+          <p>
+            Use varied infill patterns and accurate hole shapes for improved
+            clarity.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/4.svg" class="icon" />
+          <h3>Overhang and Support Optimization</h3>
+          <p>
+            Modify geometry for printable overhangs with precise support
+            placement.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/5.svg" class="icon" />
+          <h3>Granular Controls and Customization</h3>
+          <p>
+            Fine-tune print speed, layer height, pressure, and temperature with
+            precision.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/6.svg" class="icon" />
+          <h3>Network Printer Support</h3>
+          <p>
+            Seamless integration with Klipper, PrusaLink, and OctoPrint for
+            remote control.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/7.svg" class="icon" />
+          <h3>Mouse Ear Brims & Adaptive Bed Mesh</h3>
+          <p>
+            Automatic brims and adaptive mesh calibration ensure consistent
+            adhesion.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/8.svg" class="icon" />
+          <h3>User-Friendly Interface</h3>
+          <p>
+            Intuitive drag-and-drop design with pre-made profiles for popular
+            printers.
+          </p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/9.svg" class="icon" />
+          <h3>Open-Source & Community Driven</h3>
+          <p>Regular updates fueled by continuous community contributions.</p>
+        </div>
+        <div class="feature_card">
+          <img src="/images/icons/10.svg" class="icon" />
+          <h3>Wide Printer Compatibility</h3>
+          <p>
+            Supports a broad range of printers: Bambu Lab, Prusa, Creality,
+            Voron, and more.
+          </p>
+        </div>
+      </div>
+      <img src="/images/3dimages/fade_c.svg" alt="faded_c" class="faded_c" />
+      <img
+        src="/images/3dimages/faded_right_ball.svg"
+        alt="faded_right_ball"
+        class="faded_right_ball"
+      />
+      <img
+        src="/images/3dimages/faded_left_ball.svg"
+        alt="faded_left_ball"
+        class="faded_left_ball"
+      />
+    </section>
+    <section class="download-section" id="download">
+      <img src="/images/abstract_top.svg" class="download_abstract" />
+      <div class="download_header">
+        <h2>Download OrcaSlicer</h2>
+        <div class="version-info">
+          <p>Latest Release: <span class="version-number">v0.0.0</span></p>
+          <a
+            href="https://github.com/SoftFever/OrcaSlicer/releases"
+            target="_blank"
+            class="changelog-link"
+            >read changelog</a
+          >
+        </div>
+        <div class="platform-cards">
+          <div class="platform-card" id="windowsDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-windows fa-3x"></i>
+              <h3>Windows</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Installer</a>
+              <a href="#" class="download-option">Portable</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">
+                  Nightly
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 14 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.636048 0.793031C0.823576 0.60556 1.07788 0.500244 1.34305 0.500244C1.60821 0.500244 1.86252 0.60556 2.05005 0.793031L7.00005 5.74303L11.95 0.793031C12.1387 0.610873 12.3913 0.510078 12.6535 0.512356C12.9156 0.514635 13.1665 0.619804 13.3519 0.805212C13.5373 0.99062 13.6424 1.24143 13.6447 1.50363C13.647 1.76583 13.5462 2.01843 13.364 2.20703L7.70705 7.86403C7.51952 8.0515 7.26521 8.15682 7.00005 8.15682C6.73488 8.15682 6.48058 8.0515 6.29305 7.86403L0.636048 2.20703C0.448577 2.0195 0.343262 1.76519 0.343262 1.50003C0.343262 1.23487 0.448577 0.980558 0.636048 0.793031Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="platform-card" id="macosDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-apple fa-3x"></i>
+              <h3>MacOS</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Arm64</a>
+              <a href="#" class="download-option">x86_64</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">
+                  Nightly
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 14 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.636048 0.793031C0.823576 0.60556 1.07788 0.500244 1.34305 0.500244C1.60821 0.500244 1.86252 0.60556 2.05005 0.793031L7.00005 5.74303L11.95 0.793031C12.1387 0.610873 12.3913 0.510078 12.6535 0.512356C12.9156 0.514635 13.1665 0.619804 13.3519 0.805212C13.5373 0.99062 13.6424 1.24143 13.6447 1.50363C13.647 1.76583 13.5462 2.01843 13.364 2.20703L7.70705 7.86403C7.51952 8.0515 7.26521 8.15682 7.00005 8.15682C6.73488 8.15682 6.48058 8.0515 6.29305 7.86403L0.636048 2.20703C0.448577 2.0195 0.343262 1.76519 0.343262 1.50003C0.343262 1.23487 0.448577 0.980558 0.636048 0.793031Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="platform-card" id="linuxDownloads">
+            <div class="platform-icon">
+              <i class="fab fa-linux fa-3x"></i>
+              <h3>Linux</h3>
+            </div>
+            <div class="download-buttons">
+              <a href="#" class="download-option">Ubuntu24 AppImage</a>
+              <a href="#" class="download-option">AppImage</a>
+              <div class="nightly-dropdown">
+                <button class="nightly-toggle">
+                  Nightly
+                  <svg
+                    width="14"
+                    height="9"
+                    viewBox="0 0 14 9"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M0.636048 0.793031C0.823576 0.60556 1.07788 0.500244 1.34305 0.500244C1.60821 0.500244 1.86252 0.60556 2.05005 0.793031L7.00005 5.74303L11.95 0.793031C12.1387 0.610873 12.3913 0.510078 12.6535 0.512356C12.9156 0.514635 13.1665 0.619804 13.3519 0.805212C13.5373 0.99062 13.6424 1.24143 13.6447 1.50363C13.647 1.76583 13.5462 2.01843 13.364 2.20703L7.70705 7.86403C7.51952 8.0515 7.26521 8.15682 7.00005 8.15682C6.73488 8.15682 6.48058 8.0515 6.29305 7.86403L0.636048 2.20703C0.448577 2.0195 0.343262 1.76519 0.343262 1.50003C0.343262 1.23487 0.448577 0.980558 0.636048 0.793031Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+                <div class="nightly-content">
+                  <!-- Nightly build links will be populated here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="download-section" id="download">
+      <img src="/images/abstract_top.svg" class="download_abstract" />
+      <div class="download_header">
+        <p>Download OrcaSlicer</p>
+        <div class="platform-cards">
+          <div class="platform-card" id="windowsDownloads">
+            <i class="fab fa-windows fa-3x"></i>
+            <h3>Windows</h3>
+            <p class="version">Version</p>
+            <ul></ul>
+          </div>
+          <div class="platform-card" id="macosDownloads">
+            <i class="fab fa-apple fa-3x"></i>
+            <h3>macOS</h3>
+            <p class="version">Version</p>
+            <ul></ul>
+          </div>
+          <div class="platform-card" id="linuxDownloads">
+            <i class="fab fa-linux fa-3x"></i>
+            <h3>Linux</h3>
+            <p class="version">Version</p>
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section class="contact" id="contact">
+      <img src="/images/abstract_top.svg" class="contact_abstract" />
+      <div class="contact_header">
+        <p>Contact</p>
+        <h5>Get Support & Contribute</h5>
+      </div>
+      <div class="contact_cards">
+        <div class="contact_card">
+          <i class="fas fa-bug fa-5x"></i>
+          <h3>Report a Bug</h3>
+          <p>Found an issue? Help us improve by reporting bugs on GitHub.</p>
+          <a
+            href="https://github.com/SoftFever/OrcaSlicer/issues/new?template=bug_report.yml"
+            target="_blank"
+            class="contact-btn"
+            >Report Bug</a
+          >
+        </div>
+        <div class="contact_card">
+          <i class="fas fa-lightbulb fa-5x"></i>
+          <h3>Feature Request</h3>
+          <p>Have an idea? Share your suggestions for new features.</p>
+          <a
+            href="https://github.com/SoftFever/OrcaSlicer/issues/new?template=feature_request.yml"
+            target="_blank"
+            class="contact-btn"
+            >Request Feature</a
+          >
+        </div>
+        <div class="contact_card">
+          <i class="fab fa-discord fa-5x"></i>
+          <h3>Join Discord</h3>
+          <p>Connect with the community for support and discussions.</p>
+          <a
+            href="https://discord.gg/orcaslicer"
+            target="_blank"
+            class="contact-btn"
+            >Join Discord</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <a href="/">
+        <img
+          src="images/orcaslicer_logo.svg"
+          alt="OrcaSlicer logo"
+          style="height: 60px; vertical-align: middle; margin-right: 0.5rem"
+        />
       </a>
-    </div>
-  </footer>
+      <p>&copy; 2025 OrcaSlicer</p>
+      <div style="margin-top: 1rem">
+        <a
+          href="https://github.com/SoftFever/OrcaSlicer"
+          target="_blank"
+          style="color: white; margin: 0 1rem"
+        >
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </footer>
 
-  <script>
-    // Global object to store arrays of download links for each platform
-    const downloadLinks = {
-      windows: [],
-      macos: [],
-      linux: []
-    };
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector(".menu-btn");
+        const closeBtn = document.querySelector(".close-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const navLinks = document.querySelectorAll(".mobile-menu .nav-link");
 
-    // Function to group assets by platform based on file extension or keywords
-    function groupAssetsByOS(assets) {
-      assets.forEach(asset => {
-        const name = asset.name.toLowerCase();
-        if (name.endsWith('.exe') || name.includes('win')) {
-          downloadLinks.windows.push(asset);
-        } else if (name.endsWith('.dmg') || name.includes('mac')) {
-          downloadLinks.macos.push(asset);
-        } else if (name.endsWith('.appimage') || name.includes('linux')) {
-          downloadLinks.linux.push(asset);
-        }
-      });
-    }
-
-    // Function to fetch latest release data and update download links and version numbers
-    async function fetchDownloadLinks() {
-      const apiUrl = 'https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest';
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        // Get the release version from the API response (e.g. tag_name)
-        const releaseVersion = data.tag_name || data.name || '';
-        // Update all .version elements inside each platform card
-        document.querySelectorAll('.platform-card .version').forEach(elem => {
-          elem.textContent = `Version ${releaseVersion}`;
+        // Open mobile menu
+        menuBtn.addEventListener("click", function () {
+          mobileMenu.classList.add("active");
+          document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
         });
-        // Group assets by OS
-        groupAssetsByOS(data.assets);
-        // For each platform, list all downloadable assets
-        for (const platform in downloadLinks) {
-          const ul = document.querySelector(`#${platform}Downloads ul`);
-          downloadLinks[platform].forEach(asset => {
-            const li = document.createElement('li');
-            li.style.margin = '0.5rem 0';
-            const a = document.createElement('a');
-            a.href = asset.browser_download_url;
-            a.textContent = asset.name;
-            a.target = '_blank';
-            li.appendChild(a);
-            ul.appendChild(li);
+
+        // Close mobile menu
+        closeBtn.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+          document.body.style.overflow = ""; // Re-enable scrolling
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
           });
-        }
-      } catch (error) {
-        console.error('Error fetching release data:', error);
-        document.getElementById('download').innerHTML += '<p>Error loading download links.</p>';
-      }
-    }
+        });
 
-    // Automatically load download links on page load
-    window.addEventListener('DOMContentLoaded', fetchDownloadLinks);
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            mobileMenu.classList.contains("active") &&
+            !mobileMenu.contains(event.target) &&
+            !menuBtn.contains(event.target)
+          ) {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+        // Handle resize events - reset mobile menu state when switching to desktop
+        window.addEventListener("resize", function () {
+          if (
+            window.innerWidth > 768 &&
+            mobileMenu.classList.contains("active")
+          ) {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          }
         });
       });
-    });
-  </script>
-</body>
+
+      const downloadLinks = {
+        windows: {
+          stable: { installer: null, portable: null },
+          nightly: [],
+        },
+        macos: {
+          stable: { arm64: null, x86_64: null },
+          nightly: [],
+        },
+        linux: {
+          stable: { ubuntu24: null, appimage: null },
+          nightly: [],
+        },
+      };
+
+      // Function to group assets by platform and type
+      function groupAssetsByOS(assets, isNightly = false) {
+        assets.forEach((asset) => {
+          const name = asset.name.toLowerCase();
+
+          if (name.endsWith(".exe") || name.includes("win")) {
+            if (isNightly) {
+              downloadLinks.windows.nightly.push(asset);
+            } else {
+              if (name.includes("portable")) {
+                downloadLinks.windows.stable.portable = asset;
+              } else {
+                downloadLinks.windows.stable.installer = asset;
+              }
+            }
+          } else if (name.endsWith(".dmg") || name.includes("mac")) {
+            if (isNightly) {
+              downloadLinks.macos.nightly.push(asset);
+            } else {
+              if (name.includes("arm64")) {
+                downloadLinks.macos.stable.arm64 = asset;
+              } else {
+                downloadLinks.macos.stable.x86_64 = asset;
+              }
+            }
+          } else if (name.endsWith(".appimage") || name.includes("linux")) {
+            if (isNightly) {
+              downloadLinks.linux.nightly.push(asset);
+            } else {
+              if (name.includes("ubuntu24")) {
+                downloadLinks.linux.stable.ubuntu24 = asset;
+              } else {
+                downloadLinks.linux.stable.appimage = asset;
+              }
+            }
+          }
+        });
+      }
+
+      async function fetchDownloadLinks() {
+        try {
+          // Fetch latest release
+          const latestResponse = await fetch(
+            "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest"
+          );
+          const latestData = await latestResponse.json();
+
+          // Fetch nightly builds
+          const nightlyResponse = await fetch(
+            "https://api.github.com/repos/SoftFever/OrcaSlicer/releases/tags/nightly-builds"
+          );
+          const nightlyData = await nightlyResponse.json();
+
+          // Get the release version and date
+          const releaseVersion = latestData.tag_name || latestData.name || "";
+          const releaseDate = new Date(
+            latestData.published_at
+          ).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+
+          // Update version info
+          document.querySelector(".version-number").textContent =
+            releaseVersion;
+
+          // Group assets
+          groupAssetsByOS(latestData.assets, false);
+          groupAssetsByOS(nightlyData.assets, true);
+
+          // Update stable download links
+          updateStableDownloadLinks();
+
+          // Update nightly build dropdowns
+          updateNightlyDropdowns();
+        } catch (error) {
+          console.error("Error fetching release data:", error);
+          document.getElementById("download").innerHTML +=
+            "<p>Error loading download links.</p>";
+        }
+      }
+
+      function updateStableDownloadLinks() {
+        // Windows
+        if (downloadLinks.windows.stable.installer) {
+          document.querySelector(
+            "#windowsDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.windows.stable.installer.browser_download_url;
+        }
+        if (downloadLinks.windows.stable.portable) {
+          document.querySelector(
+            "#windowsDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.windows.stable.portable.browser_download_url;
+        }
+
+        // MacOS
+        if (downloadLinks.macos.stable.arm64) {
+          document.querySelector(
+            "#macosDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.macos.stable.arm64.browser_download_url;
+        }
+        if (downloadLinks.macos.stable.x86_64) {
+          document.querySelector(
+            "#macosDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.macos.stable.x86_64.browser_download_url;
+        }
+
+        // Linux
+        if (downloadLinks.linux.stable.ubuntu24) {
+          document.querySelector(
+            "#linuxDownloads .download-buttons a:nth-child(1)"
+          ).href = downloadLinks.linux.stable.ubuntu24.browser_download_url;
+        }
+        if (downloadLinks.linux.stable.appimage) {
+          document.querySelector(
+            "#linuxDownloads .download-buttons a:nth-child(2)"
+          ).href = downloadLinks.linux.stable.appimage.browser_download_url;
+        }
+      }
+
+      function updateNightlyDropdowns() {
+        const platforms = ["windows", "macos", "linux"];
+
+        platforms.forEach((platform) => {
+          const nightlyContent = document.querySelector(
+            `#${platform}Downloads .nightly-content`
+          );
+          nightlyContent.innerHTML = ""; // Clear existing content
+
+          downloadLinks[platform].nightly.forEach((asset) => {
+            const link = document.createElement("a");
+            link.href = asset.browser_download_url;
+            link.textContent = asset.name;
+            link.className = "nightly-link";
+            link.target = "_blank";
+            nightlyContent.appendChild(link);
+          });
+        });
+      }
+
+      // Handle nightly dropdown toggles
+      document.addEventListener("DOMContentLoaded", function () {
+        const nightlyToggles = document.querySelectorAll(".nightly-toggle");
+
+        nightlyToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const content = this.nextElementSibling;
+            // Close all other dropdowns
+            document
+              .querySelectorAll(".nightly-content")
+              .forEach((dropdown) => {
+                if (dropdown !== content) {
+                  dropdown.classList.remove("active");
+                }
+              });
+            content.classList.toggle("active");
+          });
+        });
+
+        // Close nightly dropdowns when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!event.target.closest(".nightly-dropdown")) {
+            document.querySelectorAll(".nightly-content").forEach((content) => {
+              content.classList.remove("active");
+            });
+          }
+        });
+
+        // Initialize download links
+        fetchDownloadLinks();
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          // Only handle anchor links (starting with #)
+          if (targetId.startsWith("#")) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

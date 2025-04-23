@@ -1,8 +1,11 @@
 :root {
-  --primary-color: rgba(0, 103, 91, 1);
-  --dark-bg: #1a1a1a;
-  --light-text: #ffffff;
+  --primary-color: #009688;
+  --secondary-color: #ffffff;
+  --accent-color: #3b4446;
+  --text-color: #000000;
+  --subtle-gray: #e5e5e5;
 }
+
 
 * {
   margin: 0;
@@ -14,8 +17,8 @@
 body {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1.7;
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 16.5px;
 }
 
@@ -30,7 +33,6 @@ body {
   flex-direction: column;
   justify-content: center;
   overflow-y: hidden;
-  color: var(--light-text);
 }
 
 .hero_container::before {
@@ -40,7 +42,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f8f9fa;
+  background-color: var(--secondary-color);
   z-index: 1;
 }
 
@@ -65,8 +67,8 @@ body {
   -webkit-backdrop-filter: blur(4px); /* Safari support */
   border-radius: 100px;
   z-index: 50;
-  border: 1px solid #fff;
-  background: rgba(0, 103, 91, 0.09);
+  border: 1px solid var(--secondary-color);
+  background: rgba(0, 150, 136, 0.09);
   padding: 15px 30px;
   width: 100%;
 }
@@ -90,12 +92,13 @@ body {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 500;
+  transition: 0.2s;
 }
 
 .navbar_links a:hover {
   text-decoration: underline;
-  color: rgba(0, 103, 91, 1);
-  /* textu: #00675b; */
+  color: var(--accent-color);
+  /* textu: #009688; */
 }
 
 .menu-btn {
@@ -108,7 +111,7 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 25px;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -117,7 +120,7 @@ body {
 }
 
 .navbar_container .download-btn:hover {
-  background-color: #004d40;
+  background-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   opacity: 1;
@@ -130,7 +133,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 103, 91, 1);
+  background-color: var(--accent-color);
   z-index: 9999999;
   padding: 24px;
   flex-direction: column;
@@ -152,23 +155,29 @@ body {
   padding: 12px 0;
   text-decoration: none;
   font-weight: 600;
-  color: #fff;
+  color: var(--subtle-gray);
+  transition: 0.2s;
 }
 
 .mobile-menu .nav-link:hover {
   text-decoration: underline;
-  color: green;
+  color: var(--secondary-color);
 }
 
 .mobile-menu .download-btn {
   margin-top: 16px;
-  background-color: white;
+  background-color: var(--subtle-gray);
   padding: 10px 25px;
   border: none;
   cursor: pointer;
   border-radius: 25px;
   color: var(--primary-color);
   font-weight: 600;
+  transition: 0.2s;
+}
+
+.mobile-menu .download-btn:hover{
+  background-color: var(--secondary-color);
 }
 
 .close-btn {
@@ -177,7 +186,7 @@ body {
   right: 20px;
   background: none;
   border: none;
-  color: white;
+  color: var(--secondary-color);
   font-size: 24px;
   cursor: pointer;
 }
@@ -198,7 +207,7 @@ body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  color: rgba(0, 103, 91, 1);
+  color: var(--primary-color);
   max-width: 800px;
   line-height: 1.3;
 }
@@ -208,7 +217,7 @@ body {
   max-width: 680px;
   text-align: center;
   margin-bottom: 2.5rem;
-  color: rgba(0, 103, 91, 1);
+  color: var(--text-color);
 }
 .hero_texts .download-btn {
   margin-bottom: 0px;
@@ -217,7 +226,7 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 25px;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -225,7 +234,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .hero_texts .download-btn:hover {
-  background-color: #004d40;
+  background-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   opacity: 1;
@@ -243,7 +252,7 @@ body {
 /* FETURES SECTION */
 
 .features {
-  background-color: #f8f9fa;
+  background-color: var(--secondary-color);
   position: relative;
 }
 .feature_abstract {
@@ -275,7 +284,7 @@ body {
   text-align: center;
   font-weight: 500;
   font-size: 18px;
-  color: rgba(0, 103, 91, 0.9);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
   display: inline-block;
 }
@@ -284,7 +293,7 @@ body {
   font-size: 42px;
   font-weight: 600;
   text-align: center;
-  color: #1a1a1a;
+  color: var(--text-color);
   margin-top: 0.5rem;
   line-height: 1.4;
 }
@@ -302,8 +311,8 @@ body {
   height: auto;
   min-height: 350px;
   margin-bottom: 2rem;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--secondary-color);
+  border: 1px solid var(--subtle-gray);
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -331,7 +340,7 @@ body {
   width: auto;
 }
 .feature_card p {
-  color: rgba(26, 26, 26, 1);
+  color: var(--text-color);
 }
 
 /* DOWNLOAD SECTION */
@@ -340,7 +349,7 @@ body {
   text-align: center;
   padding: 5rem 2rem;
   position: relative;
-  background: #f8f9fa;
+  background: var(--secondary-color);
 }
 
 .download_abstract {
@@ -359,11 +368,11 @@ body {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  color: rgba(0, 103, 91, 1);
+  color: var(--primary-color);
 }
 
 .version-info {
-  color: #1a1a1a;
+  color: var(--text-color);
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
@@ -375,7 +384,7 @@ body {
 }
 
 .changelog-link {
-  color: rgba(0, 103, 91, 1);
+  color: var(--primary-color);
   text-decoration: underline;
   display: inline-block;
   margin-top: 0.5rem;
@@ -392,13 +401,13 @@ body {
 }
 
 .platform-card {
-  border: 1px solid rgba(0, 103, 91, 0.3);
+  border: 1px solid var(--subtle-gray);
   padding: 2.5rem;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-radius: 12px;
   position: relative;
-  background: #ffffff;
+  background: var(--secondary-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -424,14 +433,14 @@ body {
 }
 
 .platform-icon i {
-  color: rgba(0, 103, 91, 1);
+  color: var(--primary-color);
   font-size: 60px;
   margin-bottom: 1rem;
 }
 
 .platform-icon h3 {
   font-size: 1.5rem;
-  color: #1a1a1a;
+  color: var(--text-color);
   font-weight: 600;
   margin: 0;
 }
@@ -460,7 +469,7 @@ body {
 
 .download-option:hover {
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--secondary-color);
   transform: translateY(-2px);
   opacity: 1;
   text-decoration: none;
@@ -474,8 +483,8 @@ body {
 .nightly-toggle {
   width: 100%;
   padding: 10px 20px;
-  background: #4a5568;
-  color: white;
+  background: var(--accent-color);
+  color: var(--secondary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -489,7 +498,7 @@ body {
 }
 
 .nightly-toggle:hover {
-  background-color: #2d3748;
+  background-color: var(--text-color);
   transform: translateY(-2px);
   opacity: 1;
 }
@@ -508,8 +517,8 @@ body {
   top: calc(100% + 5px);
   left: 0;
   right: 0;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
+  background: var(--secondary-color);
+  border: 1px solid var(--subtle-gray);
   border-radius: 8px;
   z-index: 140;
   max-height: 250px;
@@ -531,7 +540,7 @@ body {
   padding: 10px 15px;
   color: #333;
   text-decoration: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid --var(--subtle-gray);
   transition: background-color 0.2s;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -544,41 +553,43 @@ body {
 }
 
 .nightly-link:hover {
-  background-color: #f8f8f8;
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 .footer {
-  background: #343a40;
+  background: var(--accent-color);
   padding: 2.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #adb5bd;
+  color: var(--subtle-gray);
 }
 .footer p {
   margin-top: 1rem;
-  color: #adb5bd;
+  color: var(--subtle-gray);
   font-size: 0.9rem;
 }
 .footer a img {
   filter: brightness(0) invert(1) opacity(0.7);
 }
 .footer div a i{
-  color: #adb5bd;
+  color: var(--subtle-gray);
   transition: color 0.3s;
 }
 .footer div a i:hover {
-  color: #ffffff;
+  color: var(--secondary-color);
 }
+
 /*Contact */
+
 .contact {
   padding: 5rem 2rem;
   position: relative;
   overflow: hidden;
-  background: #f8f9fa;
+  background: var(--secondary-color);
   border-top: none;
 }
 
@@ -599,7 +610,7 @@ body {
 }
 
 .contact_header p {
-  color: rgba(0, 103, 91, 0.9);
+  color: var(--primary-color);
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -607,7 +618,7 @@ body {
 
 .contact_header h5 {
   font-size: 42px;
-  color: #1a1a1a;
+  color: var(--text-color);
   margin: 0.5rem 0 0 0;
   font-weight: 600;
   line-height: 1.4;
@@ -624,8 +635,8 @@ body {
 }
 
 .contact_card {
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: var(--secondary-color);
+  border: 1px solid var(--subtle-gray);
   padding: 2rem;
   min-height: 320px;
   border-radius: 12px;
@@ -643,7 +654,7 @@ body {
 }
 
 .contact_card i {
-  color: rgba(0, 103, 91, 1);
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
   font-size: 40px;
 }
@@ -669,7 +680,7 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 25px;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -681,7 +692,7 @@ body {
 }
 
 .contact-btn:hover {
-  background-color: #004d40;
+  background-color: var(--accent-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   opacity: 1;

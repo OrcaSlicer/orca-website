@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #009688;        /* Verde acqua principale dei modelli 3D */
-  --secondary-color: #ffffff;      /* Sfondo bianco */
-  --accent-color: #3b4446;         /* Grigio scuro dell'header e del bordo finestra */
-  --text-color: #000000;           /* Testo nero */
-  --subtle-gray: #e5e5e5;          /* Grigio chiaro per sfondo aree secondarie */
+  --primary-color: #009688;
+  --secondary-color: #ffffff;
+  --accent-color: #3b4446;
+  --text-color: #000000;
+  --subtle-gray: #e5e5e5;
 }
 
 

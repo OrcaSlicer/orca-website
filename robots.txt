@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.orcaslicer.com/sitemap.xml
+Host: www.orcaslicer.com
+

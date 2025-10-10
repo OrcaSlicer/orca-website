@@ -2,8 +2,10 @@
   --primary-color: #009688;
   --secondary-color: #ffffff;
   --accent-color: #3b4446;
-  --text-color: #000000;
+  --text-color: #353535;
+  --muted-text-color: #666666;
   --subtle-gray: #e5e5e5;
+  --light-bg: #f8f9fa;
 }
 
 
@@ -303,7 +305,7 @@ body {
   font-size: 42px;
   font-weight: 600;
   text-align: center;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin-top: 0.5rem;
   line-height: 1.4;
 }
@@ -382,7 +384,7 @@ body {
 }
 
 .version-info {
-  color: var(--text-color);
+  color: var(--primary-color);
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
@@ -450,7 +452,7 @@ body {
 
 .platform-icon h3 {
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   font-weight: 600;
   margin: 0;
 }
@@ -469,12 +471,13 @@ body {
   padding: 10px 20px;
   background: transparent;
   border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  color: var(--text-color);
   text-decoration: none;
   border-radius: 25px;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
   font-weight: 500;
   font-size: 0.95rem;
+  
 }
 
 .download-option:hover {
@@ -485,87 +488,80 @@ body {
   text-decoration: none;
 }
 
-.nightly-dropdown {
-  position: relative;
-  width: 100%;
+/* Nightly Section Styles */
+.nightly-section {
+  background-color: var(--light-bg);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 0;
 }
 
-.nightly-toggle {
-  width: 100%;
-  padding: 10px 20px;
-  background: var(--accent-color);
-  color: var(--secondary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  font-size: 0.95rem;
-  font-weight: 500;
+.nightly-section .download_header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.nightly-toggle:hover {
-  background-color: var(--text-color);
-  transform: translateY(-2px);
-  opacity: 1;
+.nightly-description {
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.nightly-toggle svg {
-  transition: transform 0.3s;
-}
-
-.nightly-toggle.active svg {
-  transform: rotate(180deg);
-}
-
-.nightly-content {
-  display: none;
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
-  right: 0;
+.nightly-section .platform-card {
+  /* Ensure nightly platform cards have the same styling as stable */
   background: var(--secondary-color);
-  border: 1px solid var(--subtle-gray);
-  border-radius: 8px;
-  z-index: 140;
-  max-height: 250px;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+}
+
+.nightly-section .platform-card:hover {
+  transform: translateY(-5px);
+}
+
+.nightly-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 250px;
+  padding: 0.5rem 0;
+  max-height: 400px;
   overflow-y: auto;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-top: auto;
 }
 
-.nightly-content.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+.nightly-downloads::-webkit-scrollbar {
+  width: 8px;
 }
 
-.nightly-link {
-  display: block;
-  padding: 10px 15px;
-  color: #333;
-  text-decoration: none;
-  border-bottom: 1px solid --var(--subtle-gray);
-  transition: background-color 0.2s;
+.nightly-downloads::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.nightly-downloads::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.nightly-downloads::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.no-builds-message {
+  color: var(--primary-color);
   font-size: 0.9rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.nightly-link:last-child {
-  border-bottom: none;
-}
-
-.nightly-link:hover {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  text-decoration: none;
+  padding: 1rem;
+  text-align: center;
 }
 
 .footer {
@@ -585,6 +581,11 @@ body {
 .footer a img {
   filter: brightness(1) invert(0) opacity(1);
 }
+.footer-link {
+  color: var(--primary-color);
+  margin: 0 1rem;
+}
+
 .footer div a i{
   color: var(--subtle-gray);
   transition: color 0.3s;
@@ -628,7 +629,7 @@ body {
 
 .contact_header h5 {
   font-size: 42px;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin: 0.5rem 0 0 0;
   font-weight: 600;
   line-height: 1.4;
@@ -677,7 +678,7 @@ body {
 }
 
 .contact_card p {
-  color: rgba(26, 26, 26, 0.8);
+  color: var(--text-color);
   margin-bottom: auto;
   font-weight: 400;
   padding-bottom: 1.5rem;
@@ -858,14 +859,18 @@ body {
   .platform-cards {
     grid-template-columns: 1fr;
   }
-  .nightly-content {
-    position: fixed;
-    left: 20px;
-    right: 20px;
-    width: auto;
-  }
+
   .download_header h2 {
     font-size: 2rem;
+  }
+
+  .nightly-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .nightly-downloads {
+    max-height: 300px;
   }
 }
 @media (max-width: 480px) {

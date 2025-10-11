@@ -6,6 +6,9 @@
   --muted-text-color: #666666;
   --subtle-gray: #e5e5e5;
   --light-bg: #f8f9fa;
+  --warning-bg: #fff8db; /* soft yellow */
+  --warning-border: #f0d87a;
+  --warning-text: #7a5a00;
 }
 
 
@@ -22,6 +25,48 @@ body {
   background-color: var(--secondary-color);
   color: var(--text-color);
   font-size: 16.5px;
+}
+
+/* Top Warning Banner */
+.top-warning-banner {
+  width: 100%;
+  background: var(--warning-bg);
+  border-bottom: 1px solid var(--warning-border);
+  color: var(--warning-text);
+  position: sticky;
+  top: 0;
+  z-index: 1001; /* above navbar */
+}
+
+.top-warning-banner .banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.top-warning-banner a {
+  color: var(--warning-text);
+  text-decoration: underline;
+}
+
+.top-warning-banner .dismiss-btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--warning-text);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.top-warning-banner .dismiss-btn:hover {
+  background: rgba(0,0,0,0.05);
 }
 
 .hero_container {
@@ -85,6 +130,17 @@ body {
   align-items: center;
   font-weight: 600;
   color: var(--primary-color);
+}
+.official-badge {
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 2px 6px;
+  border-radius: 999px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .navbar_links {
   display: flex;

@@ -702,6 +702,29 @@
     </footer>
 
     <script>
+      // Ensure layout accounts for dynamic banner height (Cloudflare or font differences)
+      (function () {
+        function setBannerOffset() {
+          try {
+            var banner = document.getElementById("official-warning-banner");
+            var height = banner && banner.style.display !== "none" ? banner.offsetHeight : 0;
+            document.documentElement.style.setProperty("--banner-height", height + "px");
+          } catch (e) {}
+        }
+        // Run ASAP
+        setBannerOffset();
+        // Also on resize and after fonts load
+        window.addEventListener("resize", setBannerOffset);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(setBannerOffset);
+        }
+        // Observe DOM changes to the banner (e.g., class toggles)
+        var b = document.getElementById("official-warning-banner");
+        if (b && "ResizeObserver" in window) {
+          var ro = new ResizeObserver(setBannerOffset);
+          ro.observe(b);
+        }
+      })();
       document.addEventListener("DOMContentLoaded", function () {
         // Top banner dismiss logic with persistence
         try {
@@ -712,11 +735,14 @@
             const dismissed = localStorage.getItem(storageKey) === "true";
             if (dismissed) {
               banner.style.display = "none";
+              // Update offset when hidden
+              document.documentElement.style.setProperty("--banner-height", "0px");
             }
             if (dismissBtn) {
               dismissBtn.addEventListener("click", function () {
                 banner.style.display = "none";
                 localStorage.setItem(storageKey, "true");
+                document.documentElement.style.setProperty("--banner-height", "0px");
               });
             }
           }

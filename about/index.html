@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About OrcaSlicer — Free, Open-Source 3D Printing Slicer by SoftFever</title>
+
+    <!-- Meta Descriptions (Critical for SEO) -->
+    <meta
+      name="description"
+      content="OrcaSlicer is a fast, free, open-source 3D printing slicer by SoftFever. Learn our mission, values, and how to verify the official OrcaSlicer site and downloads."
+    />
+
+    <!-- Author -->
+    <meta name="author" content="OrcaSlicer" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About OrcaSlicer — Created by SoftFever" />
+    <meta
+      property="og:description"
+      content="Learn about OrcaSlicer, the open-source 3D printing slicer, and its creator SoftFever. Mission, values, and community."
+    />
+    <meta property="og:image" content="https://www.orcaslicer.com/images/OrcaSlicer_logo.png" />
+    <meta property="og:image:secure_url" content="https://www.orcaslicer.com/images/OrcaSlicer_logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="OrcaSlicer official logo" />
+    <meta property="og:url" content="https://www.orcaslicer.com/about/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OrcaSlicer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:updated_time" content="2025-10-12T20:00:00+08:00" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About OrcaSlicer — Created by SoftFever" />
+    <meta
+      name="twitter:description"
+      content="Learn about OrcaSlicer (Orca Slicer), its mission, and its creator SoftFever."
+    />
+    <meta name="twitter:image" content="https://www.orcaslicer.com/images/OrcaSlicer_logo.png" />
+    <meta name="twitter:image:alt" content="OrcaSlicer official logo" />
+    <meta name="twitter:site" content="@real_OrcaSlicer" />
+    <meta name="twitter:creator" content="@real_OrcaSlicer" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Identity links -->
+    <link rel="me" href="https://github.com/SoftFever/OrcaSlicer" />
+    <link rel="me" href="https://x.com/real_OrcaSlicer" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.orcaslicer.com/about/" />
+    <link rel="alternate" hreflang="en" href="https://www.orcaslicer.com/about/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.orcaslicer.com/about/" />
+    <meta name="theme-color" content="#009688" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/style.css?v=2025-10-11-1" />
+    <style>
+      /* Fallback to ensure banner/nav layout applies even if an older CSS is cached */
+      .top-warning-banner { position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; }
+      .navbar_container { top: var(--banner-height, 0); }
+      body { padding-top: var(--banner-height, 0); }
+
+      /* About page specific styles */
+      .about-hero {
+        background: linear-gradient(135deg, rgba(0, 150, 136, 0.05) 0%, rgba(0, 150, 136, 0.02) 100%);
+        padding: 120px 2rem 3rem 2rem;
+        text-align: center;
+        margin-top: 80px;
+      }
+      .about-hero h1 {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+      .about-hero p {
+        font-size: 20px;
+        color: var(--text-color);
+        max-width: 900px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.6;
+      }
+      .about-section {
+        padding: 4rem 2rem;
+        background: var(--secondary-color);
+        border-top: 1px solid var(--subtle-gray);
+        border-bottom: 1px solid var(--subtle-gray);
+      }
+      .about-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .about-container h2 {
+        color: var(--primary-color);
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      .about-container p {
+        color: var(--text-color);
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .about-card {
+        background: var(--secondary-color);
+        border: 1px solid var(--subtle-gray);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .about-card h3 {
+        color: var(--primary-color);
+        font-size: 22px;
+        margin-bottom: 0.5rem;
+      }
+      .about-meta {
+        color: var(--muted-text-color);
+        font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        .about-hero { padding: 100px 1.5rem 2rem 1.5rem; }
+        .about-hero h1 { font-size: 32px; }
+        .about-hero p { font-size: 18px; }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "OrcaSlicer",
+      "url": "https://www.orcaslicer.com/",
+      "logo": "https://www.orcaslicer.com/images/orcaslicer_logo.svg",
+      "sameAs": [
+        "https://github.com/SoftFever/OrcaSlicer",
+        "https://x.com/real_OrcaSlicer",
+        "https://discord.gg/orcaslicer"
+      ],
+      "alternateName": "Orca Slicer"
+    }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "OrcaSlicer",
+      "alternateName": "Orca Slicer",
+      "applicationCategory": "DesktopApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "url": "https://www.orcaslicer.com/",
+      "downloadUrl": "https://www.orcaslicer.com/download",
+      "screenshot": "https://www.orcaslicer.com/images/OrcaSlicer_logo.png",
+      "softwareHelp": "https://github.com/SoftFever/OrcaSlicer/wiki",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OrcaSlicer",
+        "url": "https://www.orcaslicer.com/"
+      },
+      "sameAs": [
+        "https://github.com/SoftFever/OrcaSlicer",
+        "https://x.com/real_OrcaSlicer",
+        "https://discord.gg/orcaslicer"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "SoftFever",
+      "url": "https://www.orcaslicer.com/about/",
+      "sameAs": [
+        "https://github.com/SoftFever",
+        "https://x.com/real_OrcaSlicer"
+      ],
+      "jobTitle": "Creator & Maintainer of OrcaSlicer",
+      "worksFor": { "@type": "Organization", "name": "OrcaSlicer" }
+    }
+    </script>
+
+    <!-- Structured Data: AboutPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About OrcaSlicer",
+      "url": "https://www.orcaslicer.com/about/",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "OrcaSlicer",
+        "url": "https://www.orcaslicer.com/"
+      },
+      "primaryImageOfPage": "https://www.orcaslicer.com/images/OrcaSlicer_logo.png",
+      "description": "About OrcaSlicer (Orca Slicer), its creator SoftFever, and the mission of the project."
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.orcaslicer.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.orcaslicer.com/about/" }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Is OrcaSlicer free?",
+          "acceptedAnswer":{"@type":"Answer","text":"Yes. OrcaSlicer is free and open-source software."}
+        },
+        {
+          "@type":"Question",
+          "name":"Is OrcaSlicer open source?",
+          "acceptedAnswer":{"@type":"Answer","text":"Yes. You can audit the code and contribute on our GitHub repository."}
+        },
+        {
+          "@type":"Question",
+          "name":"Where can I safely download OrcaSlicer?",
+          "acceptedAnswer":{"@type":"Answer","text":"Use the official website (www.orcaslicer.com) and the official GitHub Releases page."}
+        },
+        {
+          "@type":"Question",
+          "name":"Which platforms are supported?",
+          "acceptedAnswer":{"@type":"Answer","text":"Windows, macOS, and Linux."}
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Top Warning Banner -->
+    <div id="official-warning-banner" class="top-warning-banner" role="status" aria-live="polite">
+      <div class="banner-content">
+        <span>
+          Official notice: <strong>www.orcaslicer.com</strong> is the only official OrcaSlicer site.
+          Beware of fake domains (e.g., <strong>orca-slicer.com</strong>, <strong>orcaslicer.net</strong>). Verify downloads on our
+          <a href="https://github.com/SoftFever/OrcaSlicer/releases/latest" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </span>
+        <button class="dismiss-btn" aria-label="Dismiss official notice" title="Dismiss">✕</button>
+      </div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="navbar_container">
+      <nav class="navbar">
+        <div class="navbar_content">
+          <div class="navbar_brand">
+            <a href="/">
+              <img
+                src="/images/OrcaSlicer_gradient_circle.svg"
+                alt="OrcaSlicer logo"
+                style="height: 30px; vertical-align: middle; margin-right: 0.5rem;"
+                loading="lazy"
+              />
+              <span> Orca Slicer </span><span class="official-badge" aria-label="Official website">Official</span>
+            </a>
+          </div>
+
+          <div class="navbar_links">
+            <a href="/#features">Features</a>
+            <a href="/about">About</a>
+            <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank" rel="noopener noreferrer">Documentation</a>
+            <a href="https://discord.gg/P4VE9UY9gJ" target="_blank" rel="noopener noreferrer">Community</a>
+            <a href="/#contact"> Contact </a>
+          </div>
+
+          <!-- Download Button (Desktop) -->
+          <a href="/download">
+            <button class="download-btn">Download Now</button>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button class="menu-btn" aria-label="Open menu">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.33334 10.5C1.09723 10.5 0.899447 10.42 0.740003 10.26C0.580559 10.1 0.500558 9.90222 0.500003 9.66667C0.499447 9.43111 0.579447 9.23333 0.740003 9.07333C0.900559 8.91333 1.09834 8.83333 1.33334 8.83333H14.6667C14.9028 8.83333 15.1008 8.91333 15.2608 9.07333C15.4208 9.23333 15.5006 9.43111 15.5 9.66667C15.4994 9.90222 15.4194 10.1003 15.26 10.2608C15.1006 10.4214 14.9028 10.5011 14.6667 10.5H1.33334ZM1.33334 6.33333C1.09723 6.33333 0.899447 6.25333 0.740003 6.09333C0.580559 5.93333 0.500558 5.73556 0.500003 5.5C0.499447 5.26444 0.579447 5.06667 0.740003 4.90667C0.900559 4.74667 1.09834 4.66667 1.33334 4.66667H14.6667C14.9028 4.66667 15.1008 4.74667 15.2608 4.90667C15.4208 5.06667 15.5006 5.26444 15.5 5.5C15.4994 5.73556 15.4194 5.93361 15.26 6.09417C15.1006 6.25472 14.9028 6.33444 14.6667 6.33333H1.33334ZM1.33334 2.16667C1.09723 2.16667 0.899447 2.08667 0.740003 1.92667C0.580559 1.76667 0.500558 1.56889 0.500003 1.33333C0.499447 1.09778 0.579447 0.9 0.740003 0.74C0.900559 0.58 1.09834 0.5 1.33334 0.5H14.6667C14.9028 0.5 15.1008 0.58 15.2608 0.74C15.4208 0.9 15.5006 1.09778 15.5 1.33333C15.4994 1.56889 15.4194 1.76694 15.26 1.9275C15.1006 2.08806 14.9028 2.16778 14.6667 2.16667H1.33334Z"
+                fill="#009688"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <button class="close-btn" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/about" class="nav-link">About</a>
+      <a
+          href="https://github.com/SoftFever/OrcaSlicer/wiki"
+          target="_blank" rel="noopener noreferrer"
+          class="nav-link"
+          >Documentation</a
+        >
+      <a href="https://discord.gg/orcaslicer" target="_blank" rel="noopener noreferrer" class="nav-link"
+        >Community</a
+      >
+      <a href="/#contact" class="nav-link"> Contact </a>
+      <a href="/download">
+        <button class="download-btn">Download Now</button>
+      </a>
+    </div>
+
+    <main id="main-content">
+      <!-- Hero -->
+      <section class="about-hero">
+        <h1>About OrcaSlicer</h1>
+        <p>
+          OrcaSlicer (also known as <strong>Orca Slicer</strong>) is a fast, free, open-source <strong>3D printing slicer</strong> created by <strong>SoftFever</strong>.
+          Built for speed, precision, and a great user experience, it’s trusted by makers and professionals worldwide.
+          New here? <a href="/download">Download OrcaSlicer</a>, explore <a href="/#features">key features</a>,
+          or read our <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank" rel="noopener noreferrer">documentation</a>.
+        </p>
+      </section>
+
+      <!-- About Sections -->
+      <section class="about-section">
+        <div class="about-container">
+          <h2>The Creator: SoftFever</h2>
+          <p>
+            Hi, I’m <strong>SoftFever</strong>, the creator and maintainer of OrcaSlicer. The project started as a
+            personal pursuit to improve everyday 3D printing results and usability. It has since grown into a
+            widely-adopted slicer trusted by hobbyists and professionals alike.
+          </p>
+          <p>
+            I believe great tools should be accessible to everyone. OrcaSlicer is open-source so the community can
+            audit the code, suggest features, and help shape the future of the project.
+          </p>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>Mission</h3>
+              <p>
+                Deliver a fast, reliable, and user-friendly slicer that empowers makers to get outstanding prints
+                with less trial and error.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Values</h3>
+              <p>
+                Open source, community collaboration, transparency, and a relentless focus on practical 3D printing
+                outcomes.
+              </p>
+            </div>
+            <div class="about-card">
+              <h3>Community</h3>
+              <p>
+                Join us on <a href="https://discord.gg/orcaslicer" target="_blank" rel="noopener noreferrer">Discord</a> and
+                explore the <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank" rel="noopener noreferrer">documentation</a>.
+                Report issues or request features on <a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" rel="noopener noreferrer">GitHub</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" style="background: var(--light-bg);">
+        <div class="about-container">
+          <h2>Open-Source and Independent</h2>
+          <p>
+            OrcaSlicer is independent software. The official website is <strong>www.orcaslicer.com</strong>. Always verify downloads
+            on the official <a href="https://github.com/SoftFever/OrcaSlicer/releases/latest" target="_blank" rel="noopener noreferrer">GitHub releases</a> page.
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="about-section" id="faq">
+        <div class="about-container">
+          <h2>Frequently Asked Questions</h2>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>Is OrcaSlicer free?</h3>
+              <p>Yes. OrcaSlicer is free and open-source software.</p>
+            </div>
+            <div class="about-card">
+              <h3>Is OrcaSlicer open source?</h3>
+              <p>Yes. You can audit the code and contribute on our <a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" rel="noopener noreferrer">GitHub repo</a>.</p>
+            </div>
+            <div class="about-card">
+              <h3>Where can I safely download OrcaSlicer?</h3>
+              <p>Always use the official site <strong>www.orcaslicer.com</strong> and the official <a href="https://github.com/SoftFever/OrcaSlicer/releases/latest" target="_blank" rel="noopener noreferrer">GitHub Releases</a>.</p>
+            </div>
+            <div class="about-card">
+              <h3>Which platforms are supported?</h3>
+              <p>Windows, macOS, and Linux.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="/">
+        <img src="/images/OrcaSlicer_logo.png" alt="OrcaSlicer logo" style="height: 60px; vertical-align: middle; margin-right: 0.5rem" loading="lazy" />
+      </a>
+      <p>&copy; 2025 OrcaSlicer</p>
+      <div style="margin-top: 1rem">
+        <a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Ensure layout accounts for dynamic banner height
+      (function () {
+        function setBannerOffset() {
+          try {
+            var banner = document.getElementById("official-warning-banner");
+            var height = banner && banner.style.display !== "none" ? banner.offsetHeight : 0;
+            document.documentElement.style.setProperty("--banner-height", height + "px");
+          } catch (e) {}
+        }
+        setBannerOffset();
+        window.addEventListener("resize", setBannerOffset);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(setBannerOffset);
+        }
+        var b = document.getElementById("official-warning-banner");
+        if (b && "ResizeObserver" in window) {
+          var ro = new ResizeObserver(setBannerOffset);
+          ro.observe(b);
+        }
+      })();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Top banner dismiss logic with persistence
+        try {
+          const banner = document.getElementById("official-warning-banner");
+          const dismissBtn = banner ? banner.querySelector(".dismiss-btn") : null;
+          const storageKey = "officialWarningBannerDismissed";
+          if (banner) {
+            const dismissed = localStorage.getItem(storageKey) === "true";
+            if (dismissed) {
+              banner.style.display = "none";
+              document.documentElement.style.setProperty("--banner-height", "0px");
+            }
+            if (dismissBtn) {
+              dismissBtn.addEventListener("click", function () {
+                banner.style.display = "none";
+                localStorage.setItem(storageKey, "true");
+                document.documentElement.style.setProperty("--banner-height", "0px");
+              });
+            }
+          }
+        } catch (e) {}
+
+        const menuBtn = document.querySelector(".menu-btn");
+        const closeBtn = document.querySelector(".close-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const navLinks = document.querySelectorAll(".mobile-menu .nav-link");
+
+        // Open mobile menu
+        menuBtn.addEventListener("click", function () {
+          mobileMenu.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+
+        // Close mobile menu
+        closeBtn.addEventListener("click", function () {
+          mobileMenu.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking on a link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          if (
+            mobileMenu.classList.contains("active") &&
+            !mobileMenu.contains(event.target) &&
+            !menuBtn.contains(event.target)
+          ) {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Handle resize events
+        window.addEventListener("resize", function () {
+          if (
+            window.innerWidth > 768 &&
+            mobileMenu.classList.contains("active")
+          ) {
+            mobileMenu.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const targetId = this.getAttribute("href");
+          if (targetId.startsWith("#")) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

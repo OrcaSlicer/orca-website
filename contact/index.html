@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact OrcaSlicer — Support, Media, Contributions</title>
+
+    <!-- Meta Descriptions (SEO) -->
+    <meta
+      name="description"
+      content="Contact OrcaSlicer (Orca Slicer) for support, media inquiries, and contributions. Find links for bugs, features, Discord, and official channels."
+    />
+    <meta name="author" content="OrcaSlicer" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact OrcaSlicer — Support, Media, Contributions" />
+    <meta property="og:description" content="Get help, request features, join Discord, or reach out for media inquiries." />
+    <meta property="og:image" content="https://www.orcaslicer.com/images/OrcaSlicer_logo.png" />
+    <meta property="og:url" content="https://www.orcaslicer.com/contact" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OrcaSlicer" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact OrcaSlicer — Support, Media, Contributions" />
+    <meta name="twitter:description" content="Get help, request features, join Discord, or reach out for media inquiries." />
+    <meta name="twitter:image" content="https://www.orcaslicer.com/images/OrcaSlicer_logo.png" />
+    <meta name="twitter:site" content="@real_OrcaSlicer" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.orcaslicer.com/contact" />
+    <link rel="alternate" hreflang="en" href="https://www.orcaslicer.com/contact" />
+    <link rel="alternate" hreflang="x-default" href="https://www.orcaslicer.com/contact" />
+    <meta name="theme-color" content="#009688" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/style.css?v=2025-10-11-1" />
+    <style>
+      .top-warning-banner { position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; }
+      .navbar_container { top: var(--banner-height, 0); }
+      body { padding-top: var(--banner-height, 0); }
+
+      .contact-hero { background: linear-gradient(135deg, rgba(0,150,136,.05), rgba(0,150,136,.02)); padding: 120px 2rem 3rem; text-align: center; margin-top: 80px; }
+      .contact-hero h1 { font-size: 44px; color: var(--primary-color); margin-bottom: .5rem; }
+      .contact-hero p { font-size: 20px; color: var(--text-color); max-width: 860px; margin: 0 auto; }
+
+      .contact-section { padding: 4rem 2rem; background: var(--secondary-color); }
+      .contact-container { max-width: 1100px; margin: 0 auto; }
+      .contact-container h2 { color: var(--primary-color); font-size: 32px; margin-bottom: 1rem; }
+      .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; margin-top: 1.75rem; }
+      .contact-card { background: var(--secondary-color); border: 1px solid var(--subtle-gray); border-radius: 12px; padding: 1.75rem; box-shadow: 0 2px 10px rgba(0,0,0,.05); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+      .contact-card h3 { color: var(--primary-color); font-size: 20px; margin: .5rem 0; }
+      .contact-card p { color: var(--text-color); line-height: 1.7; }
+      .contact-card a.contact-btn { display: inline-block; margin-top: .75rem; }
+      .contact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); border-color: rgba(0,150,136,.35); }
+
+      .contact-faq { padding: 4rem 2rem; background: var(--light-bg); border-top: 1px solid var(--subtle-gray); }
+      @media (max-width: 768px) { .contact-hero { padding: 100px 1.5rem 2rem; } .contact-hero h1 { font-size: 32px; } .contact-hero p { font-size: 18px; } }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"OrcaSlicer",
+      "url":"https://www.orcaslicer.com/",
+      "logo":"https://www.orcaslicer.com/images/orcaslicer_logo.svg",
+      "sameAs":["https://github.com/SoftFever/OrcaSlicer","https://x.com/real_OrcaSlicer","https://discord.gg/orcaslicer"],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@orcaslicer.com",
+        "availableLanguage": ["en"]
+      }]
+    }
+    </script>
+
+    <!-- Structured Data: ContactPage -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"ContactPage",
+      "name":"Contact OrcaSlicer",
+      "url":"https://www.orcaslicer.com/contact",
+      "description":"How to contact OrcaSlicer for support, features, and media",
+      "isPartOf": { "@type":"WebSite", "name":"OrcaSlicer", "url":"https://www.orcaslicer.com/" },
+      "primaryImageOfPage":"https://www.orcaslicer.com/images/OrcaSlicer_logo.png"
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://www.orcaslicer.com/"},
+        {"@type":"ListItem","position":2,"name":"Contact","item":"https://www.orcaslicer.com/contact"}
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"How do I report a bug?","acceptedAnswer":{"@type":"Answer","text":"Open a bug report on our GitHub issue tracker using the Bug template."}},
+        {"@type":"Question","name":"Where can I request a feature?","acceptedAnswer":{"@type":"Answer","text":"Use the Feature Request template on our GitHub issues page."}},
+        {"@type":"Question","name":"Is there a community chat?","acceptedAnswer":{"@type":"Answer","text":"Yes, join our Discord server for help and discussion."}},
+        {"@type":"Question","name":"Are there official social channels?","acceptedAnswer":{"@type":"Answer","text":"Yes, follow our official X (Twitter) account and GitHub organization."}}
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Top Warning Banner -->
+    <div id="official-warning-banner" class="top-warning-banner" role="status" aria-live="polite">
+      <div class="banner-content">
+        <span>
+          Official notice: <strong>www.orcaslicer.com</strong> is the only official OrcaSlicer site.
+          Beware of fake domains (e.g., <strong>orca-slicer.com</strong>, <strong>orcaslicer.net</strong>). Verify downloads on our
+          <a href="https://github.com/SoftFever/OrcaSlicer/releases/latest" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </span>
+        <button class="dismiss-btn" aria-label="Dismiss official notice" title="Dismiss">✕</button>
+      </div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="navbar_container">
+      <nav class="navbar">
+        <div class="navbar_content">
+          <div class="navbar_brand">
+            <a href="/">
+              <img src="/images/OrcaSlicer_gradient_circle.svg" alt="OrcaSlicer logo" style="height: 30px; vertical-align: middle; margin-right: .5rem" />
+              <span> Orca Slicer </span><span class="official-badge" aria-label="Official website">Official</span>
+            </a>
+          </div>
+          <div class="navbar_links">
+            <a href="/#features">Features</a>
+            <a href="/about">About</a>
+            <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank" rel="noopener noreferrer">Documentation</a>
+            <a href="https://discord.gg/P4VE9UY9gJ" target="_blank" rel="noopener noreferrer">Community</a>
+            <a href="/contact"> Contact </a>
+          </div>
+          <a href="/download"><button class="download-btn">Download Now</button></a>
+          <button class="menu-btn" aria-label="Open menu">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.33334 10.5C1.09723 10.5 0.899447 10.42 0.740003 10.26C0.580559 10.1 0.500558 9.90222 0.500003 9.66667C0.499447 9.43111 0.579447 9.23333 0.740003 9.07333C0.900559 8.91333 1.09834 8.83333 1.33334 8.83333H14.6667C14.9028 8.83333 15.1008 8.91333 15.2608 9.07333C15.4208 9.23333 15.5006 9.43111 15.5 9.66667C15.4994 9.90222 15.4194 10.1003 15.26 10.2608C15.1006 10.4214 14.9028 10.5011 14.6667 10.5H1.33334ZM1.33334 6.33333C1.09723 6.33333 0.899447 6.25333 0.740003 6.09333C0.580559 5.93333 0.500558 5.73556 0.500003 5.5C0.499447 5.26444 0.579447 5.06667 0.740003 4.90667C0.900559 4.74667 1.09834 4.66667 1.33334 4.66667H14.6667C14.9028 4.66667 15.1008 4.74667 15.2608 4.90667C15.4208 5.06667 15.5006 5.26444 15.5 5.5C15.4994 5.73556 15.4194 5.93361 15.26 6.09417C15.1006 6.25472 14.9028 6.33444 14.6667 6.33333H1.33334ZM1.33334 2.16667C1.09723 2.16667 0.899447 2.08667 0.740003 1.92667C0.580559 1.76667 0.500558 1.56889 0.500003 1.33333C0.499447 1.09778 0.579447 0.9 0.740003 0.74C0.900559 0.58 1.09834 0.5 1.33334 0.5H14.6667C14.9028 0.5 15.1008 0.58 15.2608 0.74C15.4208 0.9 15.5006 1.09778 15.5 1.33333C15.4994 1.56889 15.4194 1.76694 15.26 1.9275C15.1006 2.08806 14.9028 2.16778 14.6667 2.16667H1.33334Z" fill="#009688"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <button class="close-btn" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a href="/#features" class="nav-link">Features</a>
+      <a href="/about" class="nav-link">About</a>
+      <a href="https://github.com/SoftFever/OrcaSlicer/wiki" target="_blank" rel="noopener noreferrer" class="nav-link">Documentation</a>
+      <a href="https://discord.gg/orcaslicer" target="_blank" rel="noopener noreferrer" class="nav-link">Community</a>
+      <a href="/contact" class="nav-link"> Contact </a>
+      <a href="/download"><button class="download-btn">Download Now</button></a>
+    </div>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+      <h1>Contact OrcaSlicer</h1>
+      <p>Find the right channel for your request: bugs, features, community help, security, and media.</p>
+      <p style="margin-top: .75rem; color: var(--muted-text-color); font-size: 16px;">Official email: <a href="mailto:contact@orcaslicer.com" style="color: var(--primary-color); text-decoration: underline; text-underline-offset: 3px;">contact@orcaslicer.com</a></p>
+    </section>
+
+    <!-- Primary Contacts -->
+    <section class="contact-section">
+      <div class="contact-container">
+        <h2>Support & Contributions</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <i class="fas fa-envelope fa-2x"></i>
+            <h3>Email Us</h3>
+            <p>General inquiries and private communication.</p>
+            <a class="contact-btn" href="mailto:contact@orcaslicer.com">contact@orcaslicer.com</a>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-bug fa-2x"></i>
+            <h3>Report a Bug</h3>
+            <p>Found an issue? Help improve OrcaSlicer by filing a detailed bug report on GitHub.</p>
+            <a class="contact-btn" href="https://github.com/SoftFever/OrcaSlicer/issues/new?template=bug_report.yml" target="_blank" rel="noopener noreferrer">Report Bug</a>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-lightbulb fa-2x"></i>
+            <h3>Request a Feature</h3>
+            <p>Have an idea? Share your suggestion and help shape the roadmap.</p>
+            <a class="contact-btn" href="https://github.com/SoftFever/OrcaSlicer/issues/new?template=feature_request.yml" target="_blank" rel="noopener noreferrer">Request Feature</a>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-discord fa-2x"></i>
+            <h3>Community Discord</h3>
+            <p>Get help, tips, and discuss best practices with the community.</p>
+            <a class="contact-btn" href="https://discord.gg/orcaslicer" target="_blank" rel="noopener noreferrer">Join Discord</a>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-twitter fa-2x"></i>
+            <h3>Follow on X</h3>
+            <p>News, releases, and updates from the official X account.</p>
+            <a class="contact-btn" href="https://x.com/real_OrcaSlicer" target="_blank" rel="noopener noreferrer">Follow Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Topics -->
+    <section class="contact-faq">
+      <div class="contact-container">
+        <h2>More Ways To Reach Us</h2>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Security</h3>
+            <p>If you discover a security vulnerability, please responsibly disclose via a private GitHub advisory or direct message on Discord to moderators.</p>
+          </div>
+          <div class="contact-card">
+            <h3>Media & Press</h3>
+            <p>For interviews, reviews, or press kits, reach out via Discord moderators for routing. Please include your publication and deadlines.</p>
+          </div>
+          <div class="contact-card">
+            <h3>Business & Partnerships</h3>
+            <p>Interested in collaboration? Start by outlining your proposal via GitHub Discussions or Discord; we’ll follow up if there’s a fit.</p>
+          </div>
+          <div class="contact-card">
+            <h3>Verify Official Channels</h3>
+            <p>The only official website is <strong>www.orcaslicer.com</strong>. Verified releases are on our official GitHub Releases page. Beware of impersonation sites.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a href="/">
+        <img src="/images/OrcaSlicer_logo.png" alt="OrcaSlicer logo" style="height: 60px; vertical-align: middle; margin-right: .5rem" />
+      </a>
+      <p>&copy; 2025 OrcaSlicer</p>
+      <div style="margin-top: 1rem">
+        <a href="https://github.com/SoftFever/OrcaSlicer" target="_blank" rel="noopener noreferrer" class="footer-link"><i class="fab fa-github fa-2x"></i></a>
+      </div>
+    </footer>
+
+    <script>
+      (function(){
+        function setBannerOffset(){try{var b=document.getElementById("official-warning-banner");var h=b&&b.style.display!=="none"?b.offsetHeight:0;document.documentElement.style.setProperty("--banner-height",h+"px");}catch(e){}}
+        setBannerOffset();
+        window.addEventListener("resize",setBannerOffset);
+        if(document.fonts&&document.fonts.ready){document.fonts.ready.then(setBannerOffset);}var b=document.getElementById("official-warning-banner");if(b&&"ResizeObserver" in window){var ro=new ResizeObserver(setBannerOffset);ro.observe(b);}
+      })();
+      document.addEventListener("DOMContentLoaded",function(){
+        try{const banner=document.getElementById("official-warning-banner");const dismissBtn=banner?banner.querySelector(".dismiss-btn"):null;const storageKey="officialWarningBannerDismissed";if(banner){const dismissed=localStorage.getItem(storageKey)==="true";if(dismissed){banner.style.display="none";document.documentElement.style.setProperty("--banner-height","0px");}if(dismissBtn){dismissBtn.addEventListener("click",function(){banner.style.display="none";localStorage.setItem(storageKey,"true");document.documentElement.style.setProperty("--banner-height","0px");});}}}catch(e){}
+        const menuBtn=document.querySelector(".menu-btn");const closeBtn=document.querySelector(".close-btn");const mobileMenu=document.querySelector(".mobile-menu");const navLinks=document.querySelectorAll(".mobile-menu .nav-link");
+        menuBtn.addEventListener("click",function(){mobileMenu.classList.add("active");document.body.style.overflow="hidden";});
+        closeBtn.addEventListener("click",function(){mobileMenu.classList.remove("active");document.body.style.overflow="";});
+        navLinks.forEach((l)=>{l.addEventListener("click",function(){mobileMenu.classList.remove("active");document.body.style.overflow="";});});
+        document.addEventListener("click",function(e){if(mobileMenu.classList.contains("active")&&!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target)){mobileMenu.classList.remove("active");document.body.style.overflow="";}});
+        window.addEventListener("resize",function(){if(window.innerWidth>768&&mobileMenu.classList.contains("active")){mobileMenu.classList.remove("active");document.body.style.overflow="";}});
+      });
+    </script>
+  </body>
+  </html>
+
+
